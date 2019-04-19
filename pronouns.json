@@ -15,7 +15,7 @@
                       "f":"hennēn"}
                 }
         },
-      "enclitic":
+  "enclitic_personal_pronouns":
         {
           "sg": {"1":"nā",
                  "2":{"m":"t",
@@ -106,5 +106,22 @@
               "f": "hānnēn"
             }
         }
+  },
+  "interrogatives":
+  {
+    "who": "man",
+    "what": ["mā", "mān", "mānā", "mon"],
+    "which":{
+      "sg":{
+        "m":"’aynā",
+        "f":"’aydā"
+      },
+      "pl":"’aylēn"
+    },
+    "where":"’aykā",
+    "when":"’emmaṯ",
+    "why":"lmānā",
+    "how":["’aykannā", "’aykan"],
+    "how much":"kmā"
   }
 }

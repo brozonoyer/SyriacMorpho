@@ -38,7 +38,7 @@ if __name__ == '__main__':
     #transliterated = T.transliterate("ܕܒܲܣܢܝܼܩܘܼܬܹܗ")
     #transliterated = T.transliterate("ܒܚܘܼܒܵܐ")
     #transliterated = T.transliterate("ܕܲܦܬܲܟ̣ܪܘܼܬܼܵܐ")
-    transliterated = T.transliterate('')
+    transliterated = T.transliterate('ܒܵܐ')
     print(transliterated)
 '''
     ܕ  d

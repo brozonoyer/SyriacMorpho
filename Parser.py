@@ -97,5 +97,5 @@ if __name__ == '__main__':
     #print(P.get_skeleton(string))
     P.parse_verb("teḵtvin")
     P.parse_noun("’arbabšabbē")
-    P.parse_noun("’ūmmānin")
+    P.parse_noun("’ummānin")
     #possibilities = P.match_affixes(dict=P.verb_endings, string="teḵtvin")

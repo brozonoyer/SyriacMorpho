@@ -36,6 +36,10 @@ class Parser():
         #skeleton = self.get_skeleton(verb)
 
     def parse_noun(self, noun):
+        possibilities = sorted(self.match_affixes(dict=self.noun_endings, string=noun),
+                               key = lambda x: len(x[2]))
+        for p in possibilities:
+            print(p)
         pass
 
     def match_affix(self, affix, string):
@@ -92,4 +96,6 @@ if __name__ == '__main__':
     P = Parser()
     #print(P.get_skeleton(string))
     P.parse_verb("teḵtvin")
+    P.parse_noun("’arbabšabbē")
+    P.parse_noun("’ūmmānin")
     #possibilities = P.match_affixes(dict=P.verb_endings, string="teḵtvin")

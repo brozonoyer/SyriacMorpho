@@ -1,17 +1,9 @@
 import json, re
 
 vowels = {"u","o","a","ā","e","ē","i"}
-
-consonants = {"b","ḇ","g","ġ","d","ḏ","h","w","z","ḥ","ṭ","y","k","ḵ","l","m","n","s",
-              "‘","p","f","ṣ","q","r","š","t","ṯ"}
-
+consonants = {"b","ḇ","g","ġ","d","ḏ","h","w","z","ḥ","ṭ","y","k","ḵ","l","m","n","s","‘","p","f","ṣ","q","r","š","t","ṯ"}
 beghadhkephath = {"b","g","d","k","p","t"}
-
-plosives2fricatives = {"b":"ḇ",
-                       "g":"ġ",
-                       "d":"ḏ",
-                       "k":"ḵ",
-                       "t":"ṯ"}
+plosives2fricatives = {"b":"ḇ","g":"ġ","d":"ḏ","k":"ḵ","t":"ṯ"}
 
 class Parser():
 
@@ -29,8 +21,7 @@ class Parser():
         return "".join(list(map(lambda x: "V" if x in vowels else "C", string)))
 
     def parse_verb(self, verb):
-        possibilities = sorted(self.match_affixes(dict=self.verb_endings, string=verb),
-                               key = lambda x: len(x[2]))
+        possibilities = sorted(self.match_affixes(dict=self.verb_endings, string=verb), key=lambda x:len(x[2]))
         for p in possibilities:
             print(p)
         #skeleton = self.get_skeleton(verb)
@@ -86,7 +77,6 @@ class Parser():
                 path_prime.append(list(dict.keys())[i])
                 possibilities.extend(self.match_affixes(v, string, path_prime))
             return possibilities
-
 
 if __name__ == '__main__':
     P = Parser()

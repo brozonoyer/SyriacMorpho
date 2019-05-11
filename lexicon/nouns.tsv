@@ -77,7 +77,7 @@ gonyā   f   masc-sing, replace(pl: y: insert(pl: aw: fem-pl)), add(emph-pl: ās
 gezzṯā    f   fem-sing, masc-pl
 gēyhannā    f   add(emph-pl: os), add(emph-pl: ās)
 gla‘tā    f   irr(pl: [gil‘in: gil‘ay: gil‘ē]), irr(pl: [gul‘in: gul‘ay: gul‘ē]), fem-pl
-gmurtā    f   irr(sing: [gumrā: gumraṯ: gmurtā]), irr(pl: [gumrin: gumray: gumrē]), fem-pl, insert(pl: y: fem-pl)
+gmurtā    f   swap(sing: m: u: fem-sing), swap(pl: m: u: masc-pl), fem-pl, insert(pl: y: fem-pl)
 gamlā   m, f    masc-sing, masc-pl, insert(pl: ān: masc-pl), insert(pl: aw: fem-pl)
 gensā   m   masc-sing, insert(pl: ān: masc-pl)
 gannṯā    f   fem-sing, masc-pl, insert(pl: ān: masc-pl), add(emph-pl: as), add(emph-pl: ’s), add(emph-pl: ānēs)
@@ -129,6 +129,22 @@ zartā   m/f   masc-sing, masc-pl(fem-stem)
 ḥekkā   m   irr(sing: [ḥneḵ: ḥneḵ: hekkā]), irr(sing: [ḥeḵ: ḥeḵ: ḥekkā]), irr(pl: [ḥenḵin: ḥenḵay: ḥenḵē])
 ḥellṯā    f   fem-sing, masc-pl
 ḥmā   m   irr(sing: [ḥam: ḥam: hmā]), insert(pl: h: masc-pl)
+ḥmurtā    f   swap(sing: m: u: fem-sing), swap(pl: m: u: masc-pl), swap(pl: m: u: fem-pl), insert(pl: y: swap(pl: m: u: fem-pl))
+ḥmātā   f   fem-sing, insert(pl: h: fem-pl)
+ḥesdā   m   masc-sing, insert(pl: ān: masc-pl)
+ḥesnā   m   masc-sing, masc-pl, insert(pl: aw: fem-pl)
+ḥassṯā    f   fem-sing, masc-pl
+ḥaqlā   f   masc-sing, masc-pl, fem-pl
+ḥeryā   m   irr(sing: [hrē: hrē: ḥeryā]), irr(pl: [ḥrin: ḥray: ḥrayyā])
+ḥarpuštā    f   fem-sing, insert(pl: y: fem-pl)
+ḥāṯā    f   fem-sing, irr(pl: [’aḥawwān: ’aḥawwāṯ: ’aḥawwāṯā])
+ḥettā   f/m   masc-sing, masc-pl
+ṭavyā   m   irr(sing: [ṭvē: ṭvē: ṭavyā]), irr(pl: [ṭvin: ṭvay: ṭvayyā])
+ṭviṯā   f   irr(sing: [ṭavyā: ṭavyaṯ: ṭviṯā]), irr(pl: [ṭavyān: ṭavyāṯ: ṭavyāṯā])
+ṭahrā   m   masc-sing, masc-pl, insert(pl: aw: fem-pl)
+ṭopa’zyon   m   replace(emph-pl: on: ’)
+ṭupṯā   f   fem-sing, masc-pl
+ṭeṭrarkā    m   masc-sing, add(emph-pl: ’s), add(emph-pl: o)
 
 
 šmā   m   masc-sing, insert(pl: h: masc-pl), insert(pl: h: fem-pl)

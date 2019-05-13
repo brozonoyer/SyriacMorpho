@@ -13,7 +13,7 @@ class Parser():
             self.noun_endings = json.load(n)
         with open("lexicon/patterns.json", "r") as p:
             self.patterns = json.load(p)
-        self.phonology = Phonology(inventory_path='./phonology/inventory',rules_path='./phonology/rules')
+        self.phonology = Phonology(inventory_path='./phonology/inventory', rules_path='./phonology/rules')
 
 #––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––#
 
@@ -24,9 +24,9 @@ class Parser():
         inflection_possibilities = []
 
         for (affix, word, stem, parse) in affix_options[:1]:
-            #print(affix, word, stem, parse)
-            #skeleton = Pattern(pattern='',inventory=self.phonology.inventory).make_skeleton(stem)#self.get_skeleton(stem)
-            #print(skeleton)
+            print(affix, word, stem, parse)
+            skeleton = Pattern(pattern='',inventory=self.phonology.inventory).make_skeleton(stem)#self.get_skeleton(stem)
+            print(skeleton)
             patterns = self.match_morphemes(dict=self.patterns, string=stem, morpheme_type="skeleton")
             #print(patterns)
             if len(patterns) > 0:
@@ -116,7 +116,6 @@ if __name__ == '__main__':
     #options = P.parse_verb("teḵtvin")
     #options = P.parse_verb("teṯkaṯbun")
     #options = P.parse_verb("neṯkṯev")
-    options = P.parse_verb("keṯvaṯ")
-
-    #possibilities = P.match_morphemes(dict=P.verb_endings, string="teḵtvin")
+    #options = P.parse_verb("keṯvaṯ")
+    options = P.parse_verb("neṯkatvān")
     print(options)

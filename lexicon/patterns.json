@@ -1,87 +1,26 @@
 {
   "Peal":{
-
-    "perfective":{
-      "sg":{
-        "3":{
-          "m":"1_2f_a_3f",
-          "f":"1_e_2f_3f"
-        },
-        "2":{
-          "m":"1_2f_a_3f",
-          "f":"1_2f_a_3f"
-        },
-        "1":"1_e_2f_3f"
-      },
-      "pl":{
-        "3":{
-          "m":"1_2f_a_3f",
-          "f":"1_2f_a_3f"
-        },
-        "2":{
-          "m":"1_2f_a_3f",
-          "f":"1_2f_a_3f"
-        },
-        "1":"1_2f_a_3f"
-      }
-    },
-
-    "imperfective":{
-      "sg":{
-        "3":{
-          "m":"e_1f_2_o_3f",
-          "f":"e_1f_2_o_3f"
-        },
-        "2":{
-          "m":"e_1f_2_o_3f",
-          "f":"e_1f_2_3f"
-        },
-        "1":"e_1f_2_o_3f"
-      },
-      "pl":{
-        "3":{
-          "m":"e_1f_2_3f",
-          "f":"e_1f_2_3f"
-        },
-        "2":{
-          "m":"e_1f_2_3f",
-          "f":"e_1f_2_3f"
-        },
-        "1":"e_1f_2_o_3f"
-      }
-    },
-
-    "imperative":{
-      "sg":{
-        "m":"1_2f_o_3f",
-        "f":"1_2f_o_3f"
-      },
-      "pl":{
-        "m":"1_2f_o_3f",
-        "f":"1_2f_o_3f"
-      }
-    },
-
-    "participle":{
-      "active":{
-        "m":"1_ā_2f_e_3f",
-        "f":"1_ā_2f_3"
-      },
-      "passive":{
-        "m":"1_2f_i_3f",
-        "f":"1_2f_i_3f"
-      }
-    },
-
+    "indicative":["1_2f_a_3f","1_e_2f_3f","e_1f_2_o_3f","e_1f_2_3f"],
     "infinitive":"l_m_e_1f_2_a_3f"
   },
-
-
-
-
-  "Ethpeel":"’_e_1_2_e_3",
-  "Pael":"",
-  "Ethpaal":"",
-  "Afel":"",
-  "Ettafal":""
+  "Ethpeel":{
+    "indicative":["e_2f_1_2f_e_3f","e_2f_1_a_2f_3"],
+    "infinitive":["l_m_e_2f_1_2f_ā_3f_u"]
+  },
+  "Pael":{
+    "indicative":["1_a_2_2_e_3f","1_a_2_3f","1f_a_2_2_e_3f","1f_a_2_3f","e_1_1_a_2_2_e_3f"],
+    "infinitive":"l_a_m_1f_a_2_2_ā_3f_u"
+  },
+  "Ethpaal":{
+    "indicative":["e_2f_1_a_2_2_a_3f","e_2f_1_a_2_3f"],
+    "infinitive":"l_m_e_2f_1_a_2_2_ā_3f_u"
+  },
+  "Afel":{
+    "indicative":["a_1f_2_e_3f","a_1f_2_3f"],
+    "infinitive":"l_m_a_1f_2_ā_3f_u"
+  },
+  "Ettafal":{
+    "indicative":["e_2_2_a_1f_2_a_3f","e_2_2_a_1f_2_3f"],
+    "infinitive":"l_m_e_2_2_a_1f_2_ā_3f_u"
+  }
 }

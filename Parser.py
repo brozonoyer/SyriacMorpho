@@ -1,8 +1,10 @@
 import json, re
 
-from phonology.inventory import vowel, fricative2plosive
+from phonology.phonology import vowel, fricative2plosive, Phonology, Pattern
 
 class Parser():
+
+#––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––#
 
     def __init__(self):
         with open("lexicon/conjugation.json","r") as v:
@@ -11,58 +13,50 @@ class Parser():
             self.noun_endings = json.load(n)
         with open("lexicon/patterns.json", "r") as p:
             self.patterns = json.load(p)
+        self.phonology = Phonology(inventory_path='./phonology/inventory',rules_path='./phonology/rules')
 
-    def get_skeleton(self, string):
-        '''
-        :param string:
-        :return: verbal skeleton of Cs and Vs
-        '''
-        skeleton = []
-        #radicals = []
-        num_Cs = 0
-        for x in string:
-            if x in vowel:
-                skeleton.append(x)
-            else:
-                num_Cs += 1
-                skeleton.append(str(num_Cs) + self.determine_consonant(x))
-        #        radicals.append(self.get_radical(x))
-        return "_".join(skeleton)#, "_".join(radicals)
-
-    def syllabify(self, string):
-        pass
-
-    def determine_consonant(self, x):
-        if x in fricative2plosive:
-            return "f"
-        else:
-            return ""
-
-    def get_radical(self, x):
-        return fricative2plosive[x] if x in fricative2plosive else x
+#––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––#
 
     def parse_verb(self, verb):
+
         # get possible verbs sorted in order of shortest suffix-less form
-        possibilities = sorted(self.match_morphemes(dict=self.verb_endings, string=verb), key=lambda x:len(x[2]))
-        for (affix, word, stem, parse) in possibilities[:1]:
-            print((affix, word, stem, parse))
-            skeleton = self.get_skeleton(stem)
-            patterns = self.match_morphemes(dict=self.patterns, string=skeleton, morpheme_type="skeleton")
-            print(stem + "\t" + skeleton)
-            for p in patterns:
-                print(p)
-        #skeleton = self.get_skeleton(verb)
+        affix_options = sorted(self.match_morphemes(dict=self.verb_endings, string=verb, morpheme_type="affix"), key=lambda x:len(x[2]))
+        inflection_possibilities = []
+
+        for (affix, word, stem, parse) in affix_options[:1]:
+            #print(affix, word, stem, parse)
+            #skeleton = Pattern(pattern='',inventory=self.phonology.inventory).make_skeleton(stem)#self.get_skeleton(stem)
+            #print(skeleton)
+            patterns = self.match_morphemes(dict=self.patterns, string=stem, morpheme_type="skeleton")
+            #print(patterns)
+            if len(patterns) > 0:
+                for p in patterns:
+                    inflection_possibilities.append("_".join([p[-1], parse]))
+
+        return inflection_possibilities
+
+#––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––#
 
     def parse_noun(self, noun):
         pass
 
-    def match_morpheme(self, morpheme, string):
+#––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––#
+
+    def match_morpheme(self, morpheme, string, morpheme_type='affix'):
         '''
         :param affix: prefix, suffix or circumfix
         :param string:
         :return: determines if string has this affix
         '''
-        return(bool(re.fullmatch(pattern=morpheme, string=string)))
+        if morpheme_type == 'affix':
+            return(bool(re.fullmatch(pattern=morpheme, string=string)))
+        elif morpheme_type == 'skeleton':
+            #print("HERE")
+            #print("morpheme", morpheme)
+            #print("string", string)
+            return Pattern(pattern=morpheme, inventory=self.phonology.inventory).match(string)
+
+#––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––#
 
     def remove_affix(self, affix, string):
         '''
@@ -71,6 +65,8 @@ class Parser():
         :return: returns string with affix removed from it
         '''
         return re.sub(pattern=affix, string=string, repl='\g<1>')
+
+#––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––#
 
     def match_morphemes(self, dict, string, path=[], morpheme_type="affix"):
         '''
@@ -84,7 +80,7 @@ class Parser():
         if (type(dict) == str):
             value = []
             morpheme = dict
-            if self.match_morpheme(morpheme=morpheme, string=string):
+            if self.match_morpheme(morpheme=morpheme, string=string, morpheme_type=morpheme_type):
                 if morpheme_type == "affix":
                     value.append((morpheme, string, self.remove_affix(morpheme, string), "_".join(path)))
                 elif morpheme_type == "skeleton":
@@ -94,7 +90,7 @@ class Parser():
         elif (type(dict) == list):
             values = []
             for morpheme in dict:
-                if self.match_morpheme(morpheme=morpheme, string=string):
+                if self.match_morpheme(morpheme=morpheme, string=string, morpheme_type=morpheme_type):
                     if morpheme_type == "affix":
                         value = (morpheme, string, self.remove_affix(morpheme, string), "_".join(path))
                         values.append(value)
@@ -111,8 +107,16 @@ class Parser():
                 possibilities.extend(self.match_morphemes(v, string, path_prime, morpheme_type=morpheme_type))
             return possibilities
 
+#––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––#
+#––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––#
+
 if __name__ == '__main__':
     P = Parser()
     #print(P.get_skeleton(string))
-    P.parse_verb("teḵtvin")
-    possibilities = P.match_morphemes(dict=P.verb_endings, string="teḵtvin")
+    #options = P.parse_verb("teḵtvin")
+    #options = P.parse_verb("teṯkaṯbun")
+    #options = P.parse_verb("neṯkṯev")
+    options = P.parse_verb("keṯvaṯ")
+
+    #possibilities = P.match_morphemes(dict=P.verb_endings, string="teḵtvin")
+    print(options)

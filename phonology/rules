@@ -1,0 +1,5 @@
+{a,e,o} –> ø / C_C{VC,[+syllabic,+long]}
+e –> a / _{r,[+guttural]}
+[+bgdkpt] –> [+continuant] / V_
+’ –> ø / C_V
+’ –> ø / V_C

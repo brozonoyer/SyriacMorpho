@@ -1,8 +1,8 @@
-’ā’ar		m, f		add(pl: os), add(pl: ’s), add(pl: s)
+’ā’ar		m/f		add(pl: os), add(pl: ’s), add(pl: s)
 ’aḇā		m		insert(pl: ah: masc-pl), insert(pl: ah: fem-pl)
 ’agorsā   m		insert(emph-pl: ān: masc-pl), insert(emph-pl: yān: masc-pl), masc-pl
 ’eḏnā		f		masc-sing, masc-pl, fem-pl, insert(pl: h: fem-pl)
-’umṯā	  m, f		fem-sing, shift(pl: u: e: insert(pl: aw: fem-pl)), insert(pl: aw: fem-pl)
+’umṯā	  m/f		fem-sing, shift(pl: u: e: insert(pl: aw: fem-pl)), insert(pl: aw: fem-pl)
 ’ewangelyon   m	  replace(pl: on: masc-pl), masc-pl
 ’oqeyānos   m		delete(pl: s)
 ’orgānon    m		replace(pl: on: masc-pl)
@@ -16,7 +16,7 @@
 ’ison   m   replace(pl: on: masc-pl)
 ’iqartā   f   swap(pl: q: a: fem-pl)
 ’āḵlos    m   delete(pl: s)
-’elfā   m, f    masc-pl
+’elfā   m/f    masc-pl
 ’alpā   m   swap(pl: p: f: masc-pl), swap(emph-pl: p: f: -yyā)
 ’emmā   f   masc-sing, insert(pl: ah: fem-pl), insert(pl: ah: masc-pl)
 ’amuṯisṭos    m   delete(pl: s)
@@ -58,7 +58,7 @@ bistā   f   fem-sing, fem-pl, insert(pl: y: fem-pl)
 beṭmṯā    f   fem-sing, masc-pl
 bivā    m   masc-sing, insert(pl: aw: fem-pl)
 bē‘ṯā   f   fem-sing, masc-pl, fem-pl
-baytā   m, f    irr(sing: [bē: bēṯ: baytā]), irr(sing: [bē: bē: baytā]), irr(sing: [by: byt: byt’]), irr(sing: [by: by: baytā]), irr(pl: [bāttin: bāttay: bāttē])
+baytā   m/f    irr(sing: [bē: bēṯ: baytā]), irr(sing: [bē: bē: baytā]), irr(sing: [by: byt: byt’]), irr(sing: [by: by: baytā]), irr(pl: [bāttin: bāttay: bāttē])
 bālo‘tā   f   fem-sing, fem-pl, insert(pl: y: fem-pl)
 bandā   f   masc-sing, masc-pl, add(emph-pl: os), add(emph-pl: as)
 bessāḏyā    m   replace(pl: y: insert(emph-pl: w: fem-pl)), masc-pl(emph-pl)
@@ -69,8 +69,8 @@ broṯā   m   masc-sing, masc-pl
 barṯā   f   fem-sing, irr(pl: [bnān: bnāṯ: bnāṯā])
 gvettā    f   irr(sing: [gevnā: gevnaṯ: gvettā]), irr(pl: [guvnin: guvnay: guvnē])
 gwāḡay    f   all-forms
-guddā   f, m    masc-sing, masc-pl
-guddā   m, f    masc-sing, insert(pl: ān: masc-pl)
+guddā   f/m    masc-sing, masc-pl
+guddā   m/f    masc-sing, insert(pl: ān: masc-pl)
 gullṯā   f   fem-sing, masc-pl, swap(pl: lVl: masc-pl)
 gawnā   m   masc-sing, insert(pl: ān: masc-pl), insert(pl: aw: fem-pl)
 gonyā   f   masc-sing, replace(pl: y: insert(pl: aw: fem-pl)), add(emph-pl: ās)
@@ -78,7 +78,7 @@ gezzṯā    f   fem-sing, masc-pl
 gēyhannā    f   add(emph-pl: os), add(emph-pl: ās)
 gla‘tā    f   irr(pl: [gil‘in: gil‘ay: gil‘ē]), irr(pl: [gul‘in: gul‘ay: gul‘ē]), fem-pl
 gmurtā    f   swap(sing: m: u: fem-sing), swap(pl: m: u: masc-pl), fem-pl, insert(pl: y: fem-pl)
-gamlā   m, f    masc-sing, masc-pl, insert(pl: ān: masc-pl), insert(pl: aw: fem-pl)
+gamlā   m/f    masc-sing, masc-pl, insert(pl: ān: masc-pl), insert(pl: aw: fem-pl)
 gensā   m   masc-sing, insert(pl: ān: masc-pl)
 gannṯā    f   fem-sing, masc-pl, insert(pl: ān: masc-pl), add(emph-pl: as), add(emph-pl: ’s), add(emph-pl: ānēs)
 gfettā    f   irr(sing: [gefnā: gefnaṯ: gfettā]), irr(pl: [gufnin: gufnay: gufnē])
@@ -87,9 +87,9 @@ debborṯā    f   fem-sing, insert(pl: y: fem-pl)
 dabbāštā    f   fem-sing, masc-pl
 dāḏā    m   masc-sing, masc-pl, insert(pl: ān: masc-pl)
 dukkṯā    f   fem-sing, insert(pl: y: fem-pl), insert(pl: aw: fem-pl)
-dunbā   m, f    masc-sing, irr(sing: [dnov: dnov: dunbā]), masc-pl, fem-pl, insert(pl: y: fem-pl)
+dunbā   m/f    masc-sing, irr(sing: [dnov: dnov: dunbā]), masc-pl, fem-pl, insert(pl: y: fem-pl)
 du‘tā   f   fem-sing
-dayrā   m, f    masc-sing, masc-pl, fem-pl, insert(pl: aw: fem-pl)
+dayrā   m/f    masc-sing, masc-pl, fem-pl, insert(pl: aw: fem-pl)
 delpinā   m   masc-sing, masc-pl, add(emph-pl: as)
 dem‘ṯā    f   fem-sing, masc-pl
 dannā   m   masc-sing, masc-pl, fem-pl
@@ -106,14 +106,14 @@ habbṯā    f   fem-sing, masc-pl
 hulā    f   irr(emph-pl: hulē), add(emph-pl: os), add(emph-pl: ’s), masc-pl
 huparkyā    f   masc-sing, irr(emph-pl: huparkos), add(emph-pl: ’s), add(emph-pl: s)
 hawṯā   f   fem-sing, fem-pl, masc-pl
-wēylā   f, m   add(emph-pl: as), masc-pl
-wēlā   f, m   add(emph-pl: as), masc-pl
-wē’lā   f, m   add(emph-pl: as), masc-pl
+wēylā   f/m   add(emph-pl: as), masc-pl
+wēlā   f/m   add(emph-pl: as), masc-pl
+wē’lā   f/m   add(emph-pl: as), masc-pl
 zaw‘ā   m   masc-sing, masc-pl, insert(pl: ān: masc-pl)
 zwārā   m   masc-sing, masc-pl, fem-pl
 znā   m   masc-sing, irr(pl: [znin, znay, znayyā])
 zaqqartā    f   fem-sing, fem-pl(emph-pl), insert(emph-pl: y: fem-pl)
-zeqṯā   m, f    masc-sing, masc-pl
+zeqṯā   m/f    masc-sing, masc-pl
 zar‘ā   m   masc-sing, fem-pl, masc-pl, insert(pl: y: fem-pl)
 zartā   m/f   masc-sing, masc-pl(fem-stem)
 ḥē’fay    m/f   all-forms

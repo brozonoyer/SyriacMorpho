@@ -109,7 +109,9 @@ class NounFormsGenerator():
 if __name__ == '__main__':
     file_name = os.path.join(os.path.curdir, 'lexicon/nouns.tsv')
     file = open(file_name)
+    words = dict()
     for line in file.readlines():
+        word_dict = dict()
         noun = re.sub(r'[\s\t]+[m/f]+[\s\t]+.+\n', '', line)
         gender = re.sub(r'^[’‘\wāē]+[\s\t]+', '', line)
         gender = re.sub(r'[\s\t]+.+\n', '', gender)
@@ -120,8 +122,8 @@ if __name__ == '__main__':
         operations = re.sub(r'[\)\[\]]', '', operations)
         operations = re.sub(r'\(', ', ', operations)
         operations = operations.split('; ')
-        with open(os.path.join(os.path.curdir, 'declension.json'), 'r') as f:
-            json_dict = json.load(f)
+        # with open(os.path.join(os.path.curdir, 'declension.json'), 'r') as f:
+        #    json_dict = json.load(f)
 
         generator = NounFormsGenerator(gender)
         print(generator.gender)
@@ -191,15 +193,23 @@ if __name__ == '__main__':
                 generator.replace(elements[1], elements[2], elements[3])
             elif operation.startswith('swap'):
                 generator.swap(elements[1], elements[2], elements[3], elements[4])
-
+        word_dict['stem'] = generator.stems[0]
+        word_dict['absolute_sing'] = generator.absolute['sing']
+        word_dict['absolute_pl'] = generator.absolute['pl']
+        word_dict['construct_sing'] = generator.construct['sing']
+        word_dict['construct_pl'] = generator.construct['pl']
+        word_dict['emphatic_sing'] = generator.emphatic['sing']
+        word_dict['emphatic_pl'] = generator.emphatic['pl']
+        word_dict['gender'] = generator.gender
         if 'all-forms' in operations:
             generator.all_same()
 
         generator.clean()
 
-        print(generator.stems)
-        print(generator.absolute)
-        print(generator.construct)
-        print(generator.emphatic)
+        print(noun)
+        words[noun] = word_dict
+
+    with open(os.path.join(os.path.curdir, 'word_declensions.json'), 'w') as f:
+        json.dump(words, f, ensure_ascii=False)
 
 

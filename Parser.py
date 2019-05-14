@@ -46,16 +46,17 @@ class Parser():
                                key = lambda x: len(x[2]))
         paths = []
         path = []
+        print("Possibilities for", noun)
         for x in self.declensions:
             word = x
             for key,value in self.declensions[x].items():
                 if key in noun_keys and noun in self.declensions[x][key]:
                     full_identity = key + '_' + self.declensions[x]['gender']
-                    print('(' + noun + ', ' + x + ', ' + ', ' + self.declensions[x]['stem'] + ', ' + full_identity + ')')
-
+                    print('(' + noun + ', ' + x + '(' + 'stem: ' + self.declensions[x]['stem'] + ')' + ', ' + full_identity + ')')
+        print("Other Possibilities\n")
         for p in possibilities:
             print(p)
-        pass
+        print('\n')
 
 #––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––#
 
@@ -138,4 +139,13 @@ if __name__ == '__main__':
     #options = P.parse_verb("keṯvaṯ")
     options = P.parse_verb("neṯkatvān")
     print(options)
-    print(P.parse_noun("ḥḏawwāṯā"))
+    
+    P.parse_noun("ḥḏawwāṯā")
+    P.parse_noun("šmāhē")
+    P.parse_noun("’avāhāṯā")
+    P.parse_noun("dnov")
+    P.parse_noun("mawtin")
+    P.parse_noun("gwāḡay")
+    P.parse_noun("’emwāṯ")
+    P.parse_noun("malkē")
+    

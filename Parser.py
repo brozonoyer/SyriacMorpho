@@ -1,6 +1,6 @@
 import json, re
 
-from phonology.phonology import vowel, fricative2plosive, Phonology, Pattern
+from phonology.phonology import vowel, fricative2plosive, Phonology, Pattern, Rule
 
 class Parser():
 
@@ -23,7 +23,8 @@ class Parser():
         affix_options = sorted(self.match_morphemes(dict=self.verb_endings, string=verb, morpheme_type="affix"), key=lambda x:len(x[2]))
         inflection_possibilities = []
 
-        for (affix, word, stem, parse) in affix_options[:1]:
+        for (affix, word, stem, parse) in affix_options:
+            print("––––––––––––––––––––––––––––––")
             print(affix, word, stem, parse)
             skeleton = Pattern(pattern='',inventory=self.phonology.inventory).make_skeleton(stem)#self.get_skeleton(stem)
             print(skeleton)
@@ -112,10 +113,15 @@ class Parser():
 
 if __name__ == '__main__':
     P = Parser()
-    #print(P.get_skeleton(string))
     #options = P.parse_verb("teḵtvin")
     #options = P.parse_verb("teṯkaṯbun")
     #options = P.parse_verb("neṯkṯev")
+    options = P.parse_verb("lmeḵtav")
     #options = P.parse_verb("keṯvaṯ")
-    options = P.parse_verb("neṯkatvān")
+    #options = P.parse_verb("neṯkatvān")
+    print("––––––––––––––––––––")
+    print("––––––––––––––––––––")
     print(options)
+    #Ph = Phonology(inventory_path='./phonology/inventory', rules_path='./phonology/rules')
+    #R = Rule(rule_string='{a,e,o} –> ø / C_C{VC,[+syllabic,+long]}',inventory=Ph.inventory)
+    #print(R.apply('idakot'))

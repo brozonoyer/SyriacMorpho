@@ -477,39 +477,25 @@ class Pattern():
 
 if __name__ == '__main__':
 
-    #re.match('(?P=1[])')
-
-    #s = r'ataa'
-    #reg = r'([uoaāeēi](?P<target>([’bvgġdḏhwzḥṭykḵlmns‘pfṣqrštṯ]))[uoaāeēi])'
-    #reg = re.compile(reg)
-    #to_replace = re.match(reg,s).group('target')
-    #rep = r'd'
-    #result = re.sub(pattern=to_replace,repl=rep,string='ata')
-    #print(result)
-
-
     P = Phonology()
 
-    Pa = Pattern(pattern="e_2_1_a_2_2f_3f",inventory=P.inventory)
-    print(Pa.regex)
+    #Pa = Pattern(pattern="e_2_1_a_2_2f_3f",inventory=P.inventory)
+    #print(Pa.regex)
     #print(Pa.match(string='etkatṯv'))
-    skel = Pa.make_skeleton('etkatṯv')
-    print(skel)
-    print(Pa.pattern2regex(skel))
+    #skel = Pa.make_skeleton('etkatṯv')
+    #print(skel)
+    #print(Pa.pattern2regex(skel))
     #print(Pa.match(string=Pa.pattern2regex(pattern=skel)))
     #print(Pa.get_corresponding_plosive_or_fricative('t'))
     #print(Pa.parse_segment('2'))
     #print(Pa.parse_segment('2f'))
 
 
-    print()
-
-    #R = Rule(rule_string='{a,e,o} –> ø / C_C{VC,[+syllabic,+long]}', inventory=P.inventory)
     R = Rule(rule_string='{a,e,o} –> ø / C_C{VC,[+syllabic,+long]}', inventory=P.inventory)
     #R = Rule(rule_string='e –> a / _{r,[+guttural]}', inventory=P.inventory)
-    print("rule\t"+R.rule_regex)
-    print("target\t"+R.target_regex)
-    print("change\t"+R.change)
-    print("enviro\t"+R.environment_regex)
+    #print("rule\t"+R.rule_regex)
+    #print("target\t"+R.target_regex)
+    #print("change\t"+R.change)
+    #print("enviro\t"+R.environment_regex)
 
-    print(R.apply('idatuk'))
+    print(R.apply('idatā'))

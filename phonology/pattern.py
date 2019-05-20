@@ -1,3 +1,6 @@
+from phonology.rule import Rule
+from phonology.segment import Segment
+from phonology.pattern import Pattern
 
 class Pattern():
 

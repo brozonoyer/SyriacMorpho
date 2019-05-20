@@ -4,7 +4,7 @@
     "infinitive":"l_m_e_1f_2_a_3f"
   },
   "Ethpeel":{
-    "finite":["e_2f_1_2f_e_3f","e_2f_1_a_2f_3","’_e_2f_1_2f_e_3f","’_e_2f_1_a_2f_3"],
+    "finite":["e_ṯ_1_2f_e_3f","e_ṯ_1_a_2f_3","’_e_ṯ_1_2f_e_3f","’_e_ṯ_1_a_2f_3"],
     "infinitive":["l_m_e_2f_1_2f_ā_3f_u"]
   },
   "Pael":{
@@ -12,7 +12,7 @@
     "infinitive":"l_a_m_1f_a_2_2_ā_3f_u"
   },
   "Ethpaal":{
-    "finite":["e_2f_1_a_2_2_a_3f","e_2f_1_a_2_3f","’_e_2f_1_a_2_2_a_3f","’_e_2f_1_a_2_3f"],
+    "finite":["e_ṯ_1_a_2_2_a_3f","e_ṯ_1_a_2_3f","’_e_ṯ_1_a_2_2_a_3f","’_e_ṯ_1_a_2_3f"],
     "infinitive":"l_m_e_2f_1_a_2_2_ā_3f_u"
   },
   "Afel":{
@@ -20,7 +20,7 @@
     "infinitive":"l_m_a_1f_2_ā_3f_u"
   },
   "Ettafal":{
-    "finite":["e_2_2_a_1f_2_a_3f","e_2_2_a_1f_2_3f","’_e_2_2_a_1f_2_a_3f","’_e_2_2_a_1f_2_3f"],
+    "finite":["e_t_t_a_1f_2_a_3f","e_t_t_a_1f_2_3f","’_e_t_t_a_1f_2_a_3f","’_e_t_t_a_1f_2_3f"],
     "infinitive":"l_m_e_2_2_a_1f_2_ā_3f_u"
   }
 }

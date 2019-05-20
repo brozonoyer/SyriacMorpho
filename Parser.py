@@ -1,6 +1,8 @@
 import json, re
 
-from phonology.phonology import vowel, fricative2plosive, Phonology, Pattern, Rule
+from phonology.phonology import vowel, fricative2plosive, Phonology, Pattern
+
+noun_keys = ['absolute_sing', 'absolute_pl', 'construct_sing', 'construct_pl', 'emphatic_sing', 'emphatic_pl']
 
 class Parser():
 
@@ -13,6 +15,8 @@ class Parser():
             self.noun_endings = json.load(n)
         with open("lexicon/patterns.json", "r") as p:
             self.patterns = json.load(p)
+        with open("word_declensions.json", "r") as w:
+            self.declensions = json.load(w)
         self.phonology = Phonology(inventory_path='./phonology/inventory', rules_path='./phonology/rules')
 
 #––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––#
@@ -23,8 +27,7 @@ class Parser():
         affix_options = sorted(self.match_morphemes(dict=self.verb_endings, string=verb, morpheme_type="affix"), key=lambda x:len(x[2]))
         inflection_possibilities = []
 
-        for (affix, word, stem, parse) in affix_options:
-            print("––––––––––––––––––––––––––––––")
+        for (affix, word, stem, parse) in affix_options[:1]:
             print(affix, word, stem, parse)
             skeleton = Pattern(pattern='',inventory=self.phonology.inventory).make_skeleton(stem)#self.get_skeleton(stem)
             print(skeleton)
@@ -39,7 +42,21 @@ class Parser():
 #––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––#
 
     def parse_noun(self, noun):
-        pass
+        possibilities = sorted(self.match_morphemes(dict=self.noun_endings, string=noun),
+                               key = lambda x: len(x[2]))
+        paths = []
+        path = []
+        print("Possibilities for", noun)
+        for x in self.declensions:
+            word = x
+            for key,value in self.declensions[x].items():
+                if key in noun_keys and noun in self.declensions[x][key]:
+                    full_identity = key + '_' + self.declensions[x]['gender']
+                    print('(' + noun + ', ' + x + '(' + 'stem: ' + self.declensions[x]['stem'] + ')' + ', ' + full_identity + ')')
+        print("Other Possibilities\n")
+        for p in possibilities:
+            print(p)
+        print('\n')
 
 #––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––#
 
@@ -113,15 +130,22 @@ class Parser():
 
 if __name__ == '__main__':
     P = Parser()
+    #print(P.get_skeleton(string))
+    P.parse_verb("teḵtvin")
+    #possibilities = P.match_affixes(dict=P.verb_endings, string="teḵtvin")
     #options = P.parse_verb("teḵtvin")
     #options = P.parse_verb("teṯkaṯbun")
     #options = P.parse_verb("neṯkṯev")
-    options = P.parse_verb("lmeḵtav")
     #options = P.parse_verb("keṯvaṯ")
-    #options = P.parse_verb("neṯkatvān")
-    print("––––––––––––––––––––")
-    print("––––––––––––––––––––")
+    options = P.parse_verb("neṯkatvān")
     print(options)
-    #Ph = Phonology(inventory_path='./phonology/inventory', rules_path='./phonology/rules')
-    #R = Rule(rule_string='{a,e,o} –> ø / C_C{VC,[+syllabic,+long]}',inventory=Ph.inventory)
-    #print(R.apply('idakot'))
+    
+    P.parse_noun("ḥḏawwāṯā")
+    P.parse_noun("šmāhē")
+    P.parse_noun("’avāhāṯā")
+    P.parse_noun("dnov")
+    P.parse_noun("mawtin")
+    P.parse_noun("gwāḡay")
+    P.parse_noun("’emwāṯ")
+    P.parse_noun("malkē")
+    
